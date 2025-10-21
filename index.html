@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Arslan Toolkit - Free Earning Websites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #7209b7;
+            --secondary-color: #3a0ca3;
+            --text-color: #f8f9fa;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .btn:hover::after {
+            transform: translateX(0);
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .note-box {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 3rem auto;
+            max-width: 800px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .note-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .note-box p {
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .coding-bg {
+            background-color: var(--card-bg);
+            padding: 4rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coding-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, transparent 49%, rgba(255,255,255,0.1) 50%, transparent 51%),
+                linear-gradient(to bottom, transparent 49%, rgba(255,255,255,0.1) 50%, transparent 51%);
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+
+        .coding-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .coding-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .coding-content p {
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .share-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .whatsapp-share {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-share:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+            background-color: #20b858;
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .creator {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        /* Share Unlock Modal Styles */
+        .share-unlock-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .share-unlock-content {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .share-unlock-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .share-unlock-content p {
+            margin-bottom: 25px;
+            line-height: 1.7;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .share-unlock-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .share-unlock-btn:hover {
+            background-color: #20b858;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Share Unlock Modal -->
+    <div id="shareUnlockModal" class="share-unlock-modal" style="display: none;">
+        <div class="share-unlock-content">
+            <h2><i class="fas fa-lock"></i> Share to Unlock this Page</h2>
+            <p>
+                اسکی ایپ انسٹال کر کے کوٸی بھی فیک یا فالتو واٹس-ایپ اسکے ساتھ کنیکٹ کر کے 5 منٹ بعد ڈسکنیکٹ کر دیں، ارننگ شروع ہو جاٸے گی
+                *توجہ سے پڑھی
+                ہر منٹ 300 پواٸنٹس ملے گے اور اس حساب سے ایک گھنٹے گے 18 ہزار اور 24 گھنٹوں کے 4 لاکھ 32 ہزار پواٸنٹس جبکہ 1 لاکھ پواٸنٹس کے 100 روپے بنے گے جبکہ کم از کم Withdraw بھی 100 روپے ہی ہے-
+            </p>
+            <button id="whatsappUnlockBtn" class="share-unlock-btn">
+                <i class="fab fa-whatsapp"></i> Share to Unlock this Page
+            </button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-toolbox"></i>
+                    <h1>Mr. Arslan Toolkit</h1>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Boost Your Online Earnings</h2>
+            <p>Discover the best free tools and websites to maximize your online income potential. Start your journey to financial freedom today!</p>
+            <div class="buttons-container">
+                <a href="https://ws-job.net/#/login?code=FXuJ2rtGTBin" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-bolt"></i> Free Online Earning
+                </a>
+                <a href="https://arslantoolkit.gt.tc" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-tools"></i> Get More Tools
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="note-box">
+            <h3><i class="fas fa-sticky-note"></i> Important Note</h3>
+            <p>اسکی ایپ انسٹال کر کے کوٸی بھی فیک یا فالتو واٹس-ایپ اسکے ساتھ کنیکٹ کر کے 5 منٹ بعد ڈسکنیکٹ کر دیں، ارننگ شروع ہو جاٸے گی *توجہ سے پڑھی ہر منٹ 300 پواٸنٹس ملے گے اور اس حساب سے ایک گھنٹے گے 18 ہزار اور 24 گھنٹوں کے 4 لاکھ 32 ہزار پواٸنٹس جبکہ 1 لاکھ پواٸنٹس کے 100 روپے بنے گے جبکہ کم از کم Withdraw بھی 100 روپے ہی ہے- 
+اپنا پرسنل واٹسپ اس پر لوگن نہ کریں۔</p>
+        </div>
+    </div>
+
+    <section class="coding-bg">
+        <div class="container">
+            <div class="coding-content">
+                <h2>Advanced Toolkit Technology</h2>
+                <p>Our platform uses cutting-edge technology to provide you with the best earning opportunities. The code running in the background ensures optimal performance and security.</p>
+                <button class="btn btn-primary">
+                    <i class="fas fa-code"></i> View Technical Details
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="share-section">
+        <div class="container">
+            <h2 class="section-title">Share This Toolkit</h2>
+            <p>Help others discover these amazing free earning resources</p>
+            <a href="https://wa.me/?text=Check%20out%20this%20amazing%20free%20earning%20toolkit%20by%20Mr.%20Arslan%3A%20" class="whatsapp-share" target="_blank" id="whatsappShare">
+                <i class="fab fa-whatsapp"></i> Share on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="creator">Created by Mr. Arslan</p>
+            <p>Toolkit Name: Mr. Arslan Toolkit</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Update WhatsApp share link with Urdu message
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappShare = document.getElementById('whatsappShare');
+            const currentUrl = encodeURIComponent(window.location.href);
+            
+            // Urdu message to be shared on WhatsApp
+            const urduMessage = encodeURIComponent(
+                "اسکی ایپ انسٹال کر کے کوٸی بھی فیک یا فالتو واٹس-ایپ اسکے ساتھ کنیکٹ کر کے 5 منٹ بعد ڈسکنیکٹ کر دیں، ارننگ شروع ہو جاٸے گی *توجہ سے پڑھی ہر منٹ 300 پواٸنٹس ملے گے اور اس حساب سے ایک گھنٹے گے 18 ہزار اور 24 گھنٹوں کے 4 لاکھ 32 ہزار پواٸنٹس جبکہ 1 لاکھ پواٸنٹس کے 100 روپے بنے گے جبکہ کم از کم Withdraw بھی 100 روپے ہی ہے- "
+            );
+            
+            whatsappShare.href = `https://wa.me/?text=${urduMessage}${currentUrl}`;
+            
+            // Check if user has already shared (using localStorage as a simple IP simulation)
+            const hasShared = localStorage.getItem('hasSharedToolkit');
+            
+            if (!hasShared) {
+                // Show the share unlock modal
+                const modal = document.getElementById('shareUnlockModal');
+                modal.style.display = 'flex';
+                
+                // Set up the unlock button with Urdu message
+                const unlockBtn = document.getElementById('whatsappUnlockBtn');
+                unlockBtn.addEventListener('click', function() {
+                    // Open WhatsApp share with Urdu message
+                    window.open(`https://wa.me/?text=${urduMessage}${currentUrl}`, '_blank');
+                    
+                    // Mark as shared in localStorage (simulating per-IP behavior)
+                    localStorage.setItem('hasSharedToolkit', 'true');
+                    
+                    // Hide the modal
+                    modal.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+  </html>
